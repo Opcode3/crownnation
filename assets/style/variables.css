@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Lobster&family=Mochiy+Pop+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  color: #433a3a;
+}
+
+h2 {
+  font-family: "Mochiy Pop One", sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+p {
+  font-size: 16px;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+.btns {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 16px;
+  font-size: 0.98rem;
+  transition: all 0.5s linear;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+.btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 12px 22px;
+  font-size: 1.2rem;
+  transition: all 0.5s linear;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+.btn-group {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-dark {
+  background-color: #F19204;
+  color: #FCEED9;
+}
+
+.btn-black {
+  background-color: #433a3a;
+  color: #FCEED9;
+}
+
+.btn-save {
+  background-color: #36c;
+  color: #FCEED9;
+}
+
+.btn-remove {
+  background-color: rgb(204, 56, 51);
+  color: #FCEED9;
+}
+
+.btn-light {
+  color: #F19204;
+  background-color: #FCEED9;
+}
+
+.btn-dark:hover {
+  color: #FCEED9;
+  background-color: #d88304;
+}
+
+.btn-light:hover {
+  color: #d88304;
+  background-color: #FCEED9;
+}
+
+.btn-save:hover {
+  color: rgb(23, 64, 148);
+  background-color: #FCEED9;
+}
+
+.btn-black:hover {
+  background-color: #3a3333;
+}
+
+.btn-remove:hover {
+  color: #d80804;
+  background-color: #FCEED9;
+}
+
+input:focus, select:hover, select:focus, textarea:hover, #search_form:hover {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(115, 70, 3, 0.25);
+}
+
+input[type=text], input[type=password], input[type=number], input[type=email], input[type=tel], select, textarea {
+  width: calc(100% - 26px);
+  display: block;
+  padding: 13px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-size: 1.04rem;
+  background-color: #FCEED9;
+  transition: all 2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+select {
+  width: 100%;
+}
+
+.formControl {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 4px 0;
+}
+
+.formControl a {
+  text-align: right;
+  color: #36c;
+  display: block;
+  padding: 2px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 590px) {
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+}/*# sourceMappingURL=variables.css.map */

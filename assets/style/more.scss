@@ -1,0 +1,592 @@
+@import './variables.scss';
+
+main{
+
+    min-height: 500px;
+
+    #page_title{
+        margin: 0 auto;
+        width: calc(100% - 20px);
+        background: $primaryWhiteColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column nowrap;
+        padding: 40px 10px;
+        gap: 10px;
+
+        h2{
+            margin: 0;
+            font-size: 3rem;
+        }
+
+        ul{
+            display: flex;
+            gap: 20px;
+            li{
+                a{
+                    padding: 0 10px;
+                    font-size: 1.2rem;
+                    font-weight:300;
+                }
+                .active{
+                    font-weight: 600;
+                }
+            }
+        }
+
+        p{
+            margin: 0 auto;
+            max-width: 90%;
+            width:600px;
+            color:#666;
+            font-size: 1rem;
+            font-weight: 300;
+            text-align:center;
+        }
+
+    }
+
+    #faqs{
+
+        padding: 20px 10px 20vh 10px;
+
+        .faq_items{
+            display: grid;
+            grid-template-columns: auto 28px;
+            transition: all 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+            cursor: pointer;
+            user-select: none;
+            row-gap: 5px;
+            max-width: calc(100% - 40px);
+            width: 700px;
+            padding: 20px;
+            margin: 20px auto 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 0 0px 1px $primaryWhiteColor;
+
+            .header_faq{
+
+                h4{
+                    font-size: 1.1rem;
+                    margin: 0;
+                    font-weight: 400;
+                    font-family: $primaryFont;
+                }
+
+                .faq_status{
+
+                    display: flex;
+                    gap:50px;
+                    margin-top: 10px ;
+
+                    span{
+                        display: flex;
+                        align-items: center;
+                        gap:6px;
+                        svg{
+                            width:26px;
+                        }
+
+                        p{
+                            margin:0;
+                            font-weight: 300;
+                            font-size: 0.98rem;
+                        }
+                    }
+                }
+            }
+
+            .btn_faq{
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                svg{
+                    width: 27px;
+                    transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1)
+                }
+            }
+
+            .description_faq{
+                grid-column: 1/ span 2;
+                display: none;
+
+                p{
+                    font-weight: 300;
+                    font-size: 0.98rem;
+                }
+            }
+
+            .faq_show{
+                display: block;
+            }
+            .faq_btn_toggle{
+                transform: rotate(225deg);
+            }
+        }
+
+        .faq_active, .faq_items:hover{
+            background-color: $primaryWhiteColor;
+        }
+
+    }
+
+    #content{
+        max-width: 780px;
+        width: 92%;
+        margin: 0 auto 10vh auto;
+        
+        p{
+            font-weight: 300;
+            font-size: 1.1rem;
+            line-height: 2.2rem;
+            text-align: justify;
+
+            b{
+                display: block;
+                font-weight: 600;
+
+                small{
+                    display: block;
+                    // list-style-type: circle;
+                    list-style: disc;
+                }
+            }
+
+            a{
+                text-decoration: underline;
+                color:$blueColor;
+            }
+        }
+    }
+
+    // contact us
+    #contact_holder{
+        // background: #e00;
+        display: grid;
+        padding: 40px 15%;
+        grid-template-columns: auto 400px;
+        justify-content: center;
+        align-items: center;
+
+        #contact_info{
+            width: 90%;
+
+            h4{
+                font-size: 1.4rem;
+                font-weight: 500;
+                // margin: 0;
+            }
+
+            form{
+
+                #termsholder{
+                    padding: 10px;
+                    padding-left: 0;
+                    a{ display: inline; border-bottom: 2px dotted $primaryColor;}
+                    label{ 
+                        width: 25px; height: 25px; margin-right: 6px;
+                        border-radius: 3px; background: #ccc;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        box-shadow: 0 0 0px 1px #ccc;
+                        svg{ display: inline; visibility: hidden; stroke: $whiteColor; width:20px; height: 20px;}
+                        background: $primaryWhiteColor;
+                    }
+
+                    input:checked + label{
+                        svg{ visibility: visible;}
+                        background: $primaryColor;
+                    }
+
+                    input{ visibility: hidden; width: 0; height: 0;}
+                }
+            }
+
+            #innerfaqs{
+                margin-top: 40px;
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+
+                p{
+                    text-align: justify;
+                    a{
+                        padding: 0 5px 0 0;
+                        border-bottom: 2px dotted $primaryColor;
+                    }
+                }
+            }
+        }
+    }
+    
+
+    //about page
+    &#aboutpage{
+
+        #page_title{
+
+            div{
+                font-weight: 300;
+                width: 800px;
+                max-width: 96%;
+                text-align: center;
+            }
+        }
+
+        #vision{
+            display: grid;
+            grid-template-columns: auto 500px;
+            padding: 40px 10%;
+            
+
+            #imageholder{
+                display: flex;
+                // justify-content: center;
+                align-items: center;
+                img{ width: 90%;}
+            }
+
+            ul{
+                margin: 0;
+                padding: 0;
+                li{
+                    p{
+                        font-weight: 300;
+                        b{display: block; font-size: 1.3rem;}
+                    }
+
+                    ul{
+                        position: relative;
+                        margin-left: 20px;
+
+                        li{
+                            padding-left: 15px;
+                            margin-bottom: 5px;
+                            font-weight: 300;
+                            &:before{
+                                content: '';
+                                width: 8px;
+                                height: 8px;
+                                background: $primaryColor;
+                                position: absolute;
+                                border-radius: 30px;
+                                left: 0;
+                                margin-top: 7px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #testimony{
+            padding: 40px 5%;
+
+            h2, p{
+                text-align:center;
+            }
+
+            ul{
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 10px;
+                margin: 30px 0 0 0;
+                padding: 0;
+                li{
+                    background: $primaryWhiteColor;
+                    padding: 10px 10px;
+                    min-width: 180px;
+                    border-radius: 4px;
+                    position: relative;
+                    transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+                    label{
+                        display: block;
+                        cursor: pointer;
+                        overflow: hidden;
+                        .customer_name{
+                            font-weight: 300;
+                            font-size: 1.3rem;
+                            display: block;
+                            font-family: $secondaryFont;
+                            margin: 10px;
+                            color:rgb(102, 102, 102);
+                        }
+
+                        .account_type, .date{ 
+                            width: fit-content; padding: 3px 8px 2px 8px; color:$primaryWhiteColor;
+                            background: $primaryColor; border-radius: 200px; 
+                            font-weight: 400; font-size: 0.87rem; display: block;
+
+                            &:last-child{
+                                float: right;
+                            }
+                        }
+
+                        &:hover, &:active{
+                            box-shadow: rgba(165, 165, 149, 0.2) 0px 8px 24px;
+                        }
+                    }
+
+                    p{ 
+                        display: none; 
+                        background: $primaryColor;
+                        position: absolute;
+                        z-index: 10;
+                        bottom: 0;
+                        left: 1%;
+                        padding: 10px 4%;
+                        width: 90%;
+                        margin: 0 auto;
+                        border-radius: 6px;
+                        text-align: justify;
+                        color: $primaryWhiteColor;
+                        font-size: 0.9rem;
+
+                        &.active{
+                            display: block;
+                        }
+                        
+                    }
+
+                    
+
+                    // &:first-child{
+                    //     p{
+                    //     display: block;
+                    //     }
+                    // }
+
+                    
+                }
+            }
+
+            p:last-child{
+                padding-top: 70px;
+                font-size: 2.31rem;
+                width: 580px;
+                max-width: 100%;
+                margin: 0 auto;
+                a{
+                    display:block;
+                    margin: 10px auto;
+                }
+            }
+        }
+
+        #pattern{
+            height: fit-content;
+            display: flex;
+            align-items: flex-end;
+            svg{fill: $primaryWhiteColor; transform: rotate(180deg); margin-bottom: -2px;}
+        }
+    }
+
+    
+}
+
+@media screen and (max-width: 1230px) {
+    main{ 
+
+        // contact us
+        #contact_holder{
+            padding: 40px 7%;
+            grid-template-columns: auto 380px;
+    
+
+            #contact_info{
+                width: 98%;
+
+                form{
+                    #termsholder{
+                        padding: 10px 0;                        
+                    }
+                }
+            }
+        }
+
+
+
+         //about page
+        &#aboutpage{
+
+            #vision{
+                grid-template-columns: auto 400px;
+                padding: 40px 6%;
+            }
+
+            #testimony{
+                padding: 30px 4%;
+
+                h2, p{
+                    text-align:center;
+                }
+
+                ul{
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 6px;
+                    margin: 30px 0 0 0;
+                    padding: 0;
+                    li{
+                        padding: 10px 10px;
+                        min-width: 180px;                        
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 980px) {
+    main{ 
+
+        // contact us
+        #contact_holder{
+            padding: 40px 2%;
+            grid-template-columns: auto 360px;
+        }
+
+        //about page
+        &#aboutpage{
+
+            #vision{
+                grid-template-columns: auto 400px;
+                padding: 40px 4%;
+            }
+
+            #testimony{
+                padding: 30px 4%;
+
+                h2, p{
+                    text-align:center;
+                }
+
+                ul{
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 6px;
+                    li{
+                        padding: 10px 10px;
+                        min-width: 180px;                        
+                    }
+                }
+            }
+        }
+    }
+
+}
+@media screen and (max-width: 768px) {
+    main{    
+        #page_title{
+            gap: 5px;
+    
+            h2{
+                text-align: center;
+                font-size: 2.4rem;
+            }
+
+        }
+
+        #contact_holder{
+            padding: 20px 10%;
+            grid-template-columns: 1fr;
+        }
+
+
+        //about page
+        &#aboutpage{
+
+            #vision{
+                grid-template-columns: 1fr;
+                padding: 40px 10%;
+
+                #imageholder{
+                    justify-content: center;
+                    img{ width: 80%;}
+                }
+            }
+            
+
+            #testimony{
+                padding: 30px 4%;
+
+                h2, p{
+                    text-align:center;
+                }
+
+                ul{
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 6px;
+                    li{
+                        padding: 10px 10px;
+                        min-width: 180px;                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 418px) {
+ 
+    main{
+
+        #page_title{
+            h2{ font-size: 1.6rem; }
+        }
+        #faqs{
+    
+            padding: 20px 10px 20vh 10px;
+    
+            .faq_items{
+                grid-template-columns: auto 21px;
+    
+                .header_faq{
+    
+                    .faq_status{
+                        gap:10px;
+                        flex-direction: column;
+    
+                    }
+                }
+
+                .btn_faq{
+                    svg{
+                        width: 20px;
+                    }
+                }
+    
+            }
+    
+        }
+
+        #contact_holder{
+            padding: 10px 5%;
+        }
+
+        //about page
+        &#aboutpage{
+
+            #vision{
+                padding: 20px 5%;
+            }
+            
+            #testimony{
+
+                ul{
+                    grid-template-columns: 1fr;
+                    gap: 10px;
+                }
+
+                p:last-child{
+                    padding-top: 40px;
+                    font-size: 1.7rem;
+                }
+            }
+        }
+    }
+}
+

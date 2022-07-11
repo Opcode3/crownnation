@@ -1,0 +1,293 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lobster&family=Mochiy+Pop+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+$primaryWhiteColor: #FCEED9;
+$backgroundColor: #F19204;
+$primaryColor: #F19204;
+$primaryHoverColor: #d88304;
+$textColor:#433a3a;
+// $textColor:#302424;
+
+$blackColor:#3a3333;
+
+$whiteColor:#fff;
+$blueColor: #36c;
+$blueColorDark: rgb(23, 64, 148);
+$redColor: rgb(204, 56, 51);
+$redColorDark: #d80804;
+
+$maxWidthRevisit: 1520px;
+
+
+// $textColor:rgb(34, 33, 33);
+
+// font-family: 'Anton', sans-serif;
+// font-family: 'Lobster', cursive;
+// font-family: 'Mochiy Pop One', sans-serif;
+// font-family: 'Poppins', sans-serif;
+$primaryFont: 'Poppins', sans-serif;
+$secondaryFont: 'Mochiy Pop One', sans-serif;
+
+
+
+
+
+$maxWidth: 1280px;
+*{ font-family: $primaryFont; color: $textColor;}
+h2{ font-family: $secondaryFont;}
+body{ padding: 0; margin: 0;}
+a{text-decoration: none;}
+li{list-style-type: none;}
+p{ font-size: 16px;}
+button{border: none; outline: none;}
+
+.btns{
+    
+    width: fit-content;
+    padding: 8px 16px;
+    font-size: .98rem;
+    transition: all .5s linear;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 5px 0;
+}
+.btn{
+    // color: $primaryWhiteColor;
+    width: fit-content;
+    padding: 12px 22px;
+    font-size: 1.2rem;
+    transition: all .5s linear;
+    border-radius: 6px;
+    
+    // font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 5px 0;
+}
+.btn-group{
+    display: flex; 
+    gap: 20px;
+    // padding: 20px 0 10px 0;
+}
+
+.btn-dark{
+    background-color: $primaryColor;
+    color: $primaryWhiteColor;
+}
+
+.btn-black{
+    background-color: $textColor;
+    color: $primaryWhiteColor;
+}
+
+.btn-save{
+    background-color: $blueColor;
+    color: $primaryWhiteColor;
+}
+
+.btn-remove{
+    background-color: $redColor;
+    color: $primaryWhiteColor;
+}
+
+.btn-light{
+    color: $primaryColor;
+    background-color: $primaryWhiteColor;
+}
+
+.btn-dark:hover{
+    color: $primaryWhiteColor;
+    background-color: $primaryHoverColor;
+}
+
+.btn-light:hover{
+    color: $primaryHoverColor;
+    background-color: $primaryWhiteColor;
+}
+
+.btn-save:hover{
+    color: $blueColorDark;
+    background-color: $primaryWhiteColor;
+}
+
+.btn-black:hover{
+    // color: $blueColorDark;
+    background-color: $blackColor;
+}
+
+.btn-remove:hover{
+    color: $redColorDark;
+    background-color: $primaryWhiteColor;
+}
+
+input:focus, select:hover, select:focus, textarea:hover, #search_form:hover {
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    // box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+    box-shadow: 0 0 0 0.25rem rgba(115, 70, 3, 0.25);
+
+}
+
+input[type='text'], input[type='password'],  input[type='number'], input[type='email'], input[type='tel'], select, textarea{ 
+    width: calc(100% - 26px); display: block; 
+    padding: 13px; border: none; outline: none;
+    border-radius: 4px; font-size: 1.04rem;
+    background-color: $primaryWhiteColor;
+    transition: all 2s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+select{ width: 100%;}
+
+.formControl{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding:4px 0;
+    // background-color: red;
+}
+.formControl a{
+    text-align: right;
+    color: #36c;
+    display: block;
+    padding: 2px;
+    font-size: 14px;
+}
+
+
+
+@media screen and (max-width:590px) {
+
+    .btn-group{
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    
+}
+
+
+
+// Functions of al repeatetive task
+@mixin product_listing {
+    .product_listings{
+        display: grid;
+        grid-template-columns: repeat(5, minmax(auto, 300px));
+        row-gap: 35px;
+        column-gap: 10px;
+        margin-bottom: 40px;
+
+        .items{
+            // background: #000;
+            transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+            border-radius: 6px;
+            overflow: hidden;
+            padding-bottom: 10px;
+
+            .product_info{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                padding: 8px 0 8px 10px;
+                p{ 
+                    font-weight: 300;
+                    font-size: 1rem;
+                    margin: 0;
+                }
+                .shopname{
+                    color:#777;
+                }
+                span{ 
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                }
+                del{
+                    color:$primaryColor;
+                }
+                label{
+                    background: $primaryColor;
+                    padding: 4px 12px;
+                    border-radius: 20px;
+                    width: fit-content;
+                    font-size: 0.78rem;
+                }
+                
+            }
+            .img_holder{
+                height: 280px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                object-fit: contain;
+                object-position: center;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+
+        .items:hover{
+           box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+    }
+
+
+
+    @media screen and (max-width: 1270px) {
+        .product_listings{
+            grid-template-columns: repeat(4, minmax(auto, 300px));
+            row-gap: 30px;
+            column-gap: 9px;
+
+            .items{
+                .product_info{
+                    label{
+                        font-size: 0.78rem;
+                    }
+                    
+                }
+                .img_holder{
+                    height: 280px;
+                }
+            }
+        }
+    }
+
+
+    @media screen and (max-width: 1100px) {
+        .product_listings{
+            grid-template-columns: repeat(3, minmax(auto, 300px));
+            .items{
+                .product_info{
+                    p{ 
+                        font-size: 1rem;
+                    }
+                    span{ 
+                        font-size: 1rem;
+                    }
+                    label{
+                        border-radius: 16px;
+                        font-size: 0.78rem;
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 840px) {
+        .product_listings{
+            grid-template-columns: repeat(2, minmax(auto, 300px));
+            row-gap: 25px;
+            column-gap: 8px;
+            justify-content: center;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .product_listings{ grid-template-columns: minmax(auto, 300px); }
+            
+    }
+}

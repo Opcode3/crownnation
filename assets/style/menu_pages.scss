@@ -1,0 +1,42 @@
+@import './variables.scss';
+main{
+
+    #user_cover{
+
+        min-height: 70vh;
+    
+        section{
+            margin: 10px auto;
+            max-width: 98%;
+            // background-color: white;
+            border-radius: 4px;
+        }
+    
+        //activate
+        #menu_activate{
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            gap:10px;
+            p,h2{ margin: 0; text-align: center;}
+        }
+    
+    }
+
+    footer{
+        // background: green;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 4%;
+        font-size: 14px;
+        margin-top: 10vh;
+
+        span {
+            a{ font-weight: 500; color:$primaryColor;}
+            a:hover{ text-decoration: underline;}
+        }
+    }
+}
+

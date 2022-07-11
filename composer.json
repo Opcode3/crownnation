@@ -1,0 +1,13 @@
+{
+    "name": "giembs/crownnation",
+    "description": "A platform that enables everyone to gain loan from series of actvities on the platform",
+    "type": "project",
+    "license": "1.0",
+    "autoload": {
+        "psr-4": {
+            "app\\": "server/"
+        }
+    },
+    "minimum-stability": "beta",
+    "require": {}
+}
